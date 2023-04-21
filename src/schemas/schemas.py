@@ -10,6 +10,9 @@ class User(BaseModel):
     sales: List[Order]
     orders: List[Order]
 
+    class Config:
+        orm_mode = True
+
 
 class Product(BaseModel):
     id: Optional[str] = None
@@ -18,6 +21,9 @@ class Product(BaseModel):
     description: str
     price: float
     avaivable: bool = False
+
+    class Config:
+        orm_mode = True
 
 
 class Order(BaseModel):
@@ -28,3 +34,6 @@ class Order(BaseModel):
     delivery: bool = True
     address: str
     obs: Optional[str] = 'No Obs'
+
+    class Config:
+        orm_mode = True
