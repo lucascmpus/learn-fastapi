@@ -1,11 +1,12 @@
 import uvicorn
-from src.router import router
+from src.routes import routes_product, routes_user
 
 create_db()
 
 app = FastAPI()
 
-app.include_router(router.router)
+app.include_router(routes_product.router, prefix='/product')
+app.include_router(routes_user.router, prefis='/user')
 
 
 if __name__ == '__main__':
