@@ -26,6 +26,16 @@ class Product(BaseModel):
         orm_mode = True
 
 
+class ProductSimple(BaseModel):
+    id: Optional[str] = None
+    name: str
+    user: User
+    price: float
+
+    class Config:
+        orm_mode = True
+
+
 class Order(BaseModel):
     id: Optional[str] = None
     user: User
